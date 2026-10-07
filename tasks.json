@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile-keylogger",
+            "type": "shell",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-O2",
+                "${workspaceFolder}/keyyZ.cpp",
+                "-o",
+                "${workspaceFolder}/output/keyyZ_final.exe",
+                "-IC:/msys64/ucrt64/include",
+                "-LC:/msys64/ucrt64/lib",
+                "-mwindows", 
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-static",
+                // ===== LISTA COMPLETA EXIGIDA POR LIBCURL =====
+                "-lcurl",
+                "-lssl",
+                "-lcrypto",
+                "-lssh2",
+                "-lnghttp2",
+                "-lngtcp2_crypto_ossl",
+                "-lngtcp2",
+                "-lnghttp3",
+                "-lpsl",
+                "-lidn2",
+                "-lunistring",
+                "-liconv",
+                "-lzstd",
+                "-lbrotlidec",
+                "-lbrotlicommon",
+                "-lz",
+                // ===== LIBRERiAS DEL SISTEMA WINDOWS =====
+                "-lws2_32",
+                "-lwldap32",
+                "-lbcrypt",
+                "-ladvapi32",
+                "-lcrypt32",
+                "-lsecur32",
+                "-liphlpapi",
+                "-luser32",
+                "-lgdi32",
+                "-lshlwapi"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
